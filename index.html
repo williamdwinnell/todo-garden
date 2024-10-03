@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Digital Garden Todo List</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>🌱 Digital Garden Todo List</h1>
+        <button id="theme-toggle">🌙</button>
+    </header>
+    <div id="new-list-form">
+        <input type="text" id="new-list-name" placeholder="Enter a new todo list name...">
+        <button id="create-list-button">Create List</button>
+    </div>
+    <div id="search-container">
+        <input type="text" id="search-input" placeholder="Search tasks...">
+    </div>
+    <div id="lists-container">
+        <!-- Todo lists will be added here -->
+    </div>
+    <div id="pomodoro-timer">
+        <h2>🍅 Pomodoro Timer</h2>
+        <div id="timer-display">25:00</div>
+        <div id="timer-controls">
+            <button id="start-timer">Start</button>
+            <button id="pause-timer">Pause</button>
+            <button id="reset-timer">Reset</button>
+            <button id="settings-timer">⚙️</button>
+        </div>
+    </div>
+
+    <!-- Priority Selection Modal -->
+    <div id="priority-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-priority-modal">&times;</span>
+            <h3>Select Task Priority</h3>
+            <div class="priority-options">
+                <button class="priority-button low" data-priority="low">Low</button>
+                <button class="priority-button medium" data-priority="medium">Medium</button>
+                <button class="priority-button high" data-priority="high">High</button>
+                <button class="priority-button none" data-priority="none">None</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pomodoro Settings Modal -->
+    <div id="pomodoro-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-pomodoro-modal">&times;</span>
+            <h3>Pomodoro Settings</h3>
+            <div class="settings-group">
+                <label for="work-interval">Work Duration (minutes):</label>
+                <input type="number" id="work-interval" min="1" value="25">
+            </div>
+            <div class="settings-group">
+                <label for="break-interval">Break Duration (minutes):</label>
+                <input type="number" id="break-interval" min="1" value="5">
+            </div>
+            <div class="settings-buttons">
+                <button id="save-pomodoro-settings">Save</button>
+                <button id="cancel-pomodoro-settings">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
