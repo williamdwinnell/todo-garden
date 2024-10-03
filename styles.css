@@ -38,14 +38,23 @@ header {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    font-size: 1.8em;
+    margin: 0;
+    text-align: center;
+    flex: 1 1 100%;
 }
 
 #theme-toggle {
     background: none;
     border: none;
-    font-size: 24px;
+    font-size: 28px;
     cursor: pointer;
     transition: transform 0.3s;
+    flex: 0 0 auto;
 }
 
 #theme-toggle:hover {
@@ -56,19 +65,22 @@ header {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
 #new-list-name {
-    width: 300px;
-    padding: 10px 15px;
+    width: 100%;
+    max-width: 300px;
+    padding: 12px 18px;
     border: none;
     border-radius: 30px 0 0 30px;
     font-size: 16px;
     outline: none;
+    margin-bottom: 10px;
 }
 
 #create-list-button {
-    padding: 10px 20px;
+    padding: 12px 20px;
     border: none;
     border-radius: 0 30px 30px 0;
     background-color: var(--button-color);
@@ -76,6 +88,8 @@ header {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
+    width: 100%;
+    max-width: 150px;
 }
 
 #create-list-button:hover {
@@ -86,11 +100,13 @@ header {
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
+    flex-wrap: wrap;
 }
 
 #search-input {
-    width: 300px;
-    padding: 10px 15px;
+    width: 100%;
+    max-width: 300px;
+    padding: 12px 18px;
     border: 2px solid var(--button-color);
     border-radius: 30px;
     font-size: 16px;
@@ -110,10 +126,13 @@ header {
     border-radius: 15px;
     padding: 20px;
     margin: 15px;
-    width: 320px;
+    width: 100%;
+    max-width: 320px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     position: relative;
     transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
 }
 
 .todo-list:hover {
@@ -125,6 +144,7 @@ header {
     text-align: center;
     font-weight: 500;
     position: relative;
+    font-size: 1.5em;
 }
 
 .delete-list {
@@ -133,7 +153,7 @@ header {
     right: 15px;
     background: none;
     border: none;
-    font-size: 18px;
+    font-size: 24px;
     color: var(--button-color);
     cursor: pointer;
     transition: color 0.3s;
@@ -144,22 +164,23 @@ header {
 }
 
 .todo-list input[type="text"] {
-    width: 92%;
-    padding: 8px 12px;
+    width: 90%;
+    padding: 10px 15px;
     border: 2px solid var(--button-color);
     border-radius: 30px;
     outline: none;
     margin-bottom: 10px;
+    font-size: 16px;
 }
 
 .todo-list button.add-task-button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: none;
     border-radius: 30px;
     background-color: var(--button-color);
     color: #fff;
-    font-size: 14px;
+    font-size: 16px;
     cursor: pointer;
     margin-bottom: 15px;
     transition: background-color 0.3s;
@@ -172,7 +193,7 @@ header {
 .tasks {
     list-style-type: none;
     padding-left: 0;
-    max-height: 150px;
+    max-height: 200px;
     overflow-y: auto;
     margin-bottom: 10px;
 }
@@ -191,6 +212,7 @@ header {
     align-items: center;
     margin-bottom: 8px;
     position: relative;
+    font-size: 16px;
 }
 
 .tasks li input[type="checkbox"] {
@@ -206,7 +228,7 @@ header {
 .tasks li .delete-task {
     background: none;
     border: none;
-    font-size: 16px;
+    font-size: 18px;
     color: var(--button-color);
     cursor: pointer;
     margin-left: 10px;
@@ -218,8 +240,8 @@ header {
 }
 
 .tasks li .priority {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     margin-right: 5px;
 }
@@ -243,7 +265,7 @@ header {
 .edit-task {
     background: none;
     border: none;
-    font-size: 16px;
+    font-size: 18px;
     color: var(--button-color);
     cursor: pointer;
     margin-left: 10px;
@@ -256,7 +278,7 @@ header {
 
 .edit-task-input {
     width: 100%;
-    padding: 5px;
+    padding: 8px;
     border: 1px solid var(--button-color);
     border-radius: 5px;
     outline: none;
@@ -267,7 +289,7 @@ header {
     background-color: #ddd;
     border-radius: 10px;
     overflow: hidden;
-    height: 10px;
+    height: 12px;
     margin-top: 10px;
 }
 
@@ -296,13 +318,13 @@ header {
 }
 
 .stem {
-    width: 6px;
+    width: 8px;
     height: 0;
     background-color: var(--stem-color);
-    margin-left: -3px;
+    margin-left: -4px;
     transform-origin: bottom;
     animation: grow-stem 1s forwards;
-    border-radius: 3px;
+    border-radius: 4px;
 }
 
 .leaf {
@@ -400,9 +422,15 @@ header {
     margin-bottom: 10px;
 }
 
+#timer-controls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 #timer-controls button {
-    padding: 5px 10px;
-    margin: 0 3px;
+    padding: 8px 12px;
+    margin: 5px 3px;
     border: none;
     border-radius: 20px;
     background-color: var(--button-color);
@@ -410,6 +438,7 @@ header {
     cursor: pointer;
     transition: background-color 0.3s;
     font-size: 14px;
+    flex: 1 1 45%;
 }
 
 #timer-controls button:hover {
@@ -422,7 +451,7 @@ header {
     color: var(--button-color);
     border: none;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 #settings-timer:hover {
@@ -444,10 +473,11 @@ header {
 
 .modal-content {
     background-color: var(--modal-content-background);
-    margin: 10% auto; /* 10% from the top and centered */
+    margin: 20% auto; /* Increased top margin for better visibility */
     padding: 20px;
     border: 1px solid #888;
-    width: 300px; /* Could be more or less, depending on screen size */
+    width: 90%;
+    max-width: 400px; /* Increased max-width for better content display */
     border-radius: 10px;
     position: relative;
 }
@@ -472,20 +502,21 @@ header {
 
 .priority-options {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
     margin-top: 20px;
 }
 
 .priority-button {
-    flex: 1;
-    padding: 10px;
-    margin: 0 5px;
+    width: 100%;
+    padding: 12px;
+    margin: 0;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     color: #fff;
     transition: background-color 0.3s;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .priority-button.low {
@@ -509,40 +540,41 @@ header {
 }
 
 .settings-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .settings-group label {
     display: block;
     margin-bottom: 5px;
     font-weight: 500;
+    font-size: 16px;
 }
 
 .settings-group input {
     width: 100%;
-    padding: 8px 10px;
+    padding: 10px;
     border: 2px solid var(--button-color);
     border-radius: 5px;
     outline: none;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .settings-buttons {
     display: flex;
     justify-content: space-between;
+    gap: 10px;
 }
 
 .settings-buttons button {
     flex: 1;
-    padding: 8px 0;
-    margin: 0 5px;
+    padding: 10px 0;
     border: none;
     border-radius: 20px;
     background-color: var(--button-color);
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .settings-buttons button:hover {
@@ -550,19 +582,32 @@ header {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    /* Adjustments for tablets */
+    #pomodoro-timer {
+        width: 200px;
+    }
+
+    .flower.variant-3 {
+        background: radial-gradient(circle at center, #66bb6a, #43a047);
+    }
+}
+
 @media (max-width: 768px) {
+    /* Further adjustments for smaller tablets and large phones */
     #new-list-form, #search-container {
         flex-direction: column;
         align-items: center;
     }
 
     #new-list-name, #search-input {
-        width: 80%;
+        width: 90%;
+        max-width: none;
         margin-bottom: 10px;
     }
 
     #create-list-button {
-        width: 80%;
+        width: 90%;
         border-radius: 30px;
     }
 
@@ -576,5 +621,94 @@ header {
 
     .flower.variant-3 {
         background: radial-gradient(circle at center, #66bb6a, #43a047);
+    }
+
+    .todo-list {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Optimizations for mobile phones */
+    body {
+        padding: 10px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    #theme-toggle {
+        font-size: 24px;
+        margin-top: 10px;
+    }
+
+    #new-list-form, #search-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #new-list-name, #search-input {
+        width: 100%;
+        max-width: none;
+        margin-bottom: 10px;
+    }
+
+    #create-list-button, .todo-list button.add-task-button {
+        width: 100%;
+    }
+
+    .tasks li {
+        font-size: 14px;
+    }
+
+    .tasks li .delete-task, .tasks li .edit-task {
+        font-size: 16px;
+    }
+
+    .progress-bar {
+        height: 10px;
+    }
+
+    #pomodoro-timer {
+        width: 160px;
+        padding: 10px;
+    }
+
+    #pomodoro-timer h2 {
+        font-size: 16px;
+    }
+
+    #timer-display {
+        font-size: 28px;
+    }
+
+    #timer-controls button {
+        padding: 8px 10px;
+        margin: 3px;
+        font-size: 12px;
+    }
+
+    .modal-content {
+        width: 95%;
+        max-width: 350px;
+    }
+
+    .priority-button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .settings-group label, .settings-group input {
+        font-size: 14px;
+    }
+
+    .settings-buttons button {
+        font-size: 14px;
     }
 }
